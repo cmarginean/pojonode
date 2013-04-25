@@ -1,0 +1,5 @@
+<webscript>
+    <shortname>generate-pojonode-stubs</shortname>
+    <description>generate-pojonode-stubs</description>
+    <url>/pojonode/codegen/generate-pojonode-stubs</url>
+</webscript>

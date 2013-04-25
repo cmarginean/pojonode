@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- Interceptors -->
+    <bean id="pojonode.aop.getterInterceptor" class="org.pojonode.aop.intercept.GetterInterceptor">
+        <property name="nodeService" ref="NodeService"/>
+        <property name="pojonodeModelService" ref="pojonode.modelService"/>
+        <property name="pojonodeService" ref="pojonode.pojonodeService"/>
+    </bean>
+
+    <bean id="pojonode.aop.setterInterceptor" class="org.pojonode.aop.intercept.SetterInterceptor">
+        <property name="nodeService" ref="NodeService"/>
+        <property name="pojonodeModelService" ref="pojonode.modelService"/>
+        <property name="pojonodeService" ref="pojonode.pojonodeService"/>
+    </bean>
+
+    <bean id="pojonode.aop.assocOperationInterceptor" class="org.pojonode.aop.intercept.AssocOperationInterceptor">
+        <property name="nodeService" ref="NodeService"/>
+        <property name="pojonodeModelService" ref="pojonode.modelService"/>
+    </bean>
+
+</beans>

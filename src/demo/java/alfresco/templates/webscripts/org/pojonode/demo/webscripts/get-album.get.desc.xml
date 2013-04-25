@@ -1,0 +1,7 @@
+<webscript>
+    <shortname>get-album</shortname>
+    <description>get-album</description>
+    <url>/pojonode/get-album</url>
+    <authentication>user</authentication>
+    <transaction>required</transaction>
+</webscript>

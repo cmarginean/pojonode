@@ -1,0 +1,7 @@
+<webscript>
+    <shortname>create-album</shortname>
+    <description>create-album</description>
+    <url>/pojonode/create-album</url>
+    <authentication>user</authentication>
+    <transaction>required</transaction>
+</webscript>

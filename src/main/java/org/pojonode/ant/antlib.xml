@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<antlib>
+
+    <taskdef name="alfresco-xml-model" onerror="ignore" classname="org.pojonode.ant.GenerateAlfrescoXmlModelTask"/>
+    <taskdef name="web-client-config" onerror="ignore" classname="org.pojonode.ant.GeneratWebClientConfigTask"/>
+    <taskdef name="share-config-custom" onerror="ignore" classname="org.pojonode.ant.GeneratShareConfigCustomTask"/>
+
+</antlib>
+

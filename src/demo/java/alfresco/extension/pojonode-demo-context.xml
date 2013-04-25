@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN 2.0//EN' 'http://www.springframework.org/dtd/spring-beans-2.0.dtd'>
+
+<beans>
+
+    <bean id="pojonode.modelMappings" class="org.pojonode.model.ModelMappings">
+        <property name="namespaceMappings">
+            <props>
+                <prop key="pnd">http://www.pojonodedemo.org/1.0</prop>
+            </props>
+        </property>
+        <property name="models">
+            <set>
+                <bean class="org.pojonode.model.metamodel.PojonodeModel">
+                    <property name="basePackage" value="org.pojonode.demo.model"/>
+                    <property name="name" value="pnd:demoModel"/>
+                    <property name="description" value="Pojonode Demo Content Model"/>
+                    <property name="author" value="John Doe"/>
+                    <property name="version" value="1.0"/>
+                </bean>
+            </set>
+        </property>
+    </bean>
+
+    <bean parent="pojonode.alfModelXmlInstaller">
+        <property name="overwrite" value="true"/>
+        <property name="activate" value="true"/>
+        <property name="modelsToInstall">
+            <set>
+                <value>pnd:demoModel</value>
+            </set>
+        </property>
+    </bean>
+
+    <bean parent="pojonode.alfWebClientConfigInstaller">
+        <property name="overwrite" value="true"/>
+        <property name="modelsToInstall">
+            <set>
+                <value>pnd:demoModel</value>
+            </set>
+        </property>
+    </bean>
+
+</beans>

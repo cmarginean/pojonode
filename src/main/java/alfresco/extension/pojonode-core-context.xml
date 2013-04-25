@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="pojonode.modelService" class="org.pojonode.service.model.PojonodeModelService" init-method="loadModelMappings" depends-on="pojonode.modelMappings">
+        <property name="namespacePrefixResolver" ref="pojonode.namespacePrefixResolver"/>
+    </bean>
+
+    <!-- Main Pojonode Service -->
+    <bean id="pojonode.pojonodeService" class="org.pojonode.service.core.PojonodeServiceImpl">
+        <property name="getterInterceptor" ref="pojonode.aop.getterInterceptor"/>
+        <property name="setterInterceptor" ref="pojonode.aop.setterInterceptor"/>
+        <property name="assocOperationInterceptor" ref="pojonode.aop.assocOperationInterceptor"/>
+        <property name="pojonodeModelService" ref="pojonode.modelService"/>
+        <property name="serviceRegistry" ref="ServiceRegistry"/>
+    </bean>
+
+    <bean id="pojonode.namespacePrefixResolver" class="org.pojonode.service.PojonodeNamespacePrefixResolver">
+        <constructor-arg ref="NamespaceService"/>
+    </bean>
+
+</beans>
