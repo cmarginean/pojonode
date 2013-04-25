@@ -10,7 +10,7 @@ Pojonode makes the development of Alfresco repository services easier by replaci
     String name = (String) nodeService.getProperty(nodeRef, ContentModel.PROP_NAME);
 ```
 
-with the more conventional and OOP-ish approach:
+with the more conventional:
 ```
     myContentNode.getName();
 ```
